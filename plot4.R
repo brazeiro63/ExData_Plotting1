@@ -5,6 +5,8 @@ if (!exists("hpc_df")) {
   hpc_df <- getDataNeeded("../data/household_power_consumption.txt")
 }
 
+png(filename = "plot4.png")
+
 par(mfrow = c(2, 2), mar = c(5, 4, 2, 2))
 with(
   hpc_df, plot(
@@ -43,4 +45,6 @@ legend(
 
 with(hpc_df, plot(datetime,
                   Global_reactive_power,
-                  type = "l",))
+                  type = "l"))
+
+dev.off()

@@ -5,6 +5,8 @@ if (!exists("hpc_df")) {
   hpc_df <- getDataNeeded("../data/household_power_consumption.txt")
 }
 
+png(filename = "plot3.png")
+
 with(
   hpc_df, plot(
     x = datetime, y = Sub_metering_1, type = "l", xlab = "",
@@ -21,3 +23,5 @@ legend(
   "topright", lwd = 2, col = c("black", "red", "blue"),
   legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 )
+
+dev.off()

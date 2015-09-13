@@ -4,6 +4,9 @@ if (!existsFunction("getDataNeeded")) {
 if (!exists("hpc_df")) {
   hpc_df <- getDataNeeded("../data/household_power_consumption.txt")
 }
+
+png(filename = "plot1.png")
+
 gap_v <- hpc_df$Global_active_power
 hist(
   x = gap_v,
@@ -11,3 +14,4 @@ hist(
   main = "Global Active Power",
   xlab = "Global Active Power (kilowatts)"
 )
+dev.off()
